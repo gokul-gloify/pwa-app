@@ -16,4 +16,4 @@ root.render(
 
 // swDev();
 
-serviceWorker.unregister();
+serviceWorker.register();
