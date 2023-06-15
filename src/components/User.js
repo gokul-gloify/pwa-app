@@ -4,6 +4,7 @@ import { Table } from "react-bootstrap";
 const User = () => {
   const [data, setData] = useState();
   const [mode, setMode] = useState("online");
+  const [userData, setUserData] = useState();
 
 
   useEffect(() => {
@@ -13,11 +14,12 @@ const User = () => {
       response.json().then((result) => {
         console.info(result);
         setData(result);
+        setUserData(result);
         localStorage.setItem("Result", JSON.stringify(result));
       });
     }).catch((err) => {
       let collection = localStorage.getItem("Result");
-      setData(JSON.parse(collection));
+      setData(JSON.parse(collection) ? JSON.parse(collection) : userData);
     });
 
     if (!navigator.onLine) {
