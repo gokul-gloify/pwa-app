@@ -25,7 +25,7 @@ const User = () => {
     if (!navigator.onLine) {
       setMode("offline");
     }
-  }, []);
+  }, [data, userData]);
 
   return (
     <div className="container mt-5">
