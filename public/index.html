@@ -16,13 +16,28 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script>
-      if('serviceWorker' in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker.register('./sw.js').then((reg) => console.log("success: ", reg.scope)).
-          catch((e) => console.log("Failure: ", e));
-        })
-      }
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAYtF2AdFLKMBy2qntAxoC5oEitUqVfEkg",
+        authDomain: "pwa-app-dadf3.firebaseapp.com",
+        projectId: "pwa-app-dadf3",
+        storageBucket: "pwa-app-dadf3.appspot.com",
+        messagingSenderId: "529463122429",
+        appId: "1:529463122429:web:f8b9fa65f48bd328f82194",
+        measurementId: "G-1WJDM39VK7"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
     </script>
   </body>
 </html>
