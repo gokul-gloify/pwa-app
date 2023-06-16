@@ -10,7 +10,6 @@ const User = () => {
 
 
   useEffect(() => {
-
     fetch(url).then((response) => {
       response.json().then((result) => {
         console.info(result);
@@ -26,7 +25,7 @@ const User = () => {
     if (!navigator.onLine) {
       setMode("offline");
     }
-  }, [url]);
+  }, [url, userData]);
 
   return (
     <div className="container mt-5">
