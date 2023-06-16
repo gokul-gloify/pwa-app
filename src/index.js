@@ -5,7 +5,7 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import { swDev } from "./swDev"
-import * as serviceWorker from './serviceWorker';
+// import * as serviceWorker from './serviceWorker';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,4 +16,4 @@ root.render(
 
 // swDev();
 
-serviceWorker.register();
+// serviceWorker.register();
