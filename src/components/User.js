@@ -6,9 +6,10 @@ const User = () => {
   const [mode, setMode] = useState("online");
   const [userData, setUserData] = useState();
 
+  const url = "https://jsonplaceholder.typicode.com/users";
+
 
   useEffect(() => {
-    let url = "https://jsonplaceholder.typicode.com/users";
 
     fetch(url).then((response) => {
       response.json().then((result) => {
@@ -25,7 +26,7 @@ const User = () => {
     if (!navigator.onLine) {
       setMode("offline");
     }
-  }, [setData]);
+  }, [url]);
 
   return (
     <div className="container mt-5">
